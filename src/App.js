@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import styled from 'styled-components';
+import Header from './components/Header';
+import ProductSection from './components/ProductSection';
+import Footer from './components/Footer';
+import { GlobalStyles } from './styles/GlobalStyles';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <AppContainer>
+        <Header />
+        <ProductSection />
+        <Footer />
+      </AppContainer>
+    </>
   );
-}
+};
 
 export default App;
+
+// Styled Components for layout
+const AppContainer = styled.div`
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: #333;
+`;
